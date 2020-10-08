@@ -1,9 +1,10 @@
 let express = require(`express`)
 let app = express()
+const bodyParser = require("body-parser");
 const PORT = 3000
 
 app.set('view engine', 'ejs')
-app.use(require('body-parser').urlencoded({extended: true}))
+app.use(bodyParser.urlencoded({extended: true}))
 
 app.get('/', (req, res) => {
 	res.render('index')
